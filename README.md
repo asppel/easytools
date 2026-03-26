@@ -3,10 +3,10 @@
 </p>
 
 <p align="center">
-  <strong>Release 1.0.0</strong> ·
-  <a href="./release/1.0.0/EasyTools.Setup.exe">Скачать установщик</a> ·
+  <a href="./release/1.0.0/EasyTools.Setup.exe"><strong>Релиз 1.0.0</strong></a> ·
+  <a href="./release/1.0.0/EasyTools.Setup.exe">Установщик</a> ·
   <a href="./release/1.0.0/EasyTools.Setup.exe.sha256">SHA-256</a> ·
-  <a href="./release/1.0.0/RELEASE.md">Описание версии</a>
+  <a href="./release/1.0.0/RELEASE.md">Состав версии</a>
 </p>
 
 # EasyTools
@@ -43,12 +43,6 @@ EasyTools — рабочая среда для наборов данных, ка
 4. Запустите установщик.
 5. Нажмите кнопку установки в окне EasyTools Setup.
 6. Пакет будет развернут в `%APPDATA%\Autodesk\ApplicationPlugins\EasyTools.bundle`.
-
-## Состав публичного репозитория
-
-- В репозиторий не входят исходные тексты, solution-файлы и девелоперская инфраструктура.
-- Репозиторий ориентирован только на пользовательское распространение готовой версии.
-- Все пути и материалы в этом репозитории относятся к поставке `1.0.0`.
 
 ## Страница проекта
 
