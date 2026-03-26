@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EasyTools</title>
+  <meta name="description" content="Публичная бинарная поставка EasyTools для AutoCAD 2025.">
+  <style>
+    :root {
+      --bg: #f4f7fa;
+      --surface: #ffffff;
+      --surface-soft: #f8fafc;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #d8e1ea;
+      --accent: #0f766e;
+      --accent-soft: #e6fffa;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #f4f7fa 0%, #eef4f8 100%);
+      color: var(--text);
+    }
+    .hero {
+      background: #0f172a;
+      color: #fff;
+      padding: 56px 24px 40px;
+    }
+    .hero-inner,
+    .content {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      font-size: 12px;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+    h1 {
+      margin: 18px 0 10px;
+      font-size: 44px;
+      line-height: 1.05;
+    }
+    .subtitle {
+      max-width: 720px;
+      margin: 0;
+      color: #cbd5e1;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .content {
+      padding: 28px 24px 56px;
+      display: grid;
+      gap: 18px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.04);
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: var(--surface-soft);
+    }
+    .button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .label {
+      margin: 0 0 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .value {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .pill {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid #99f6e4;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    ol {
+      margin: 14px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="badge">EasyTools public binary release</span>
+      <h1>EasyTools</h1>
+      <p class="subtitle">
+        Публичная поставка для пользовательской установки. Репозиторий содержит только скомпилированные файлы и
+        готовый инсталлятор для AutoCAD 2025.
+      </p>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="card">
+      <p class="label">Загрузка</p>
+      <p class="value">Скачайте единый установщик и разверните актуальный <code>EasyTools.bundle</code> в пользовательский профиль AutoCAD.</p>
+      <div class="actions">
+        <a class="button primary" href="./downloads/EasyTools.Setup.exe">Скачать EasyTools.Setup.exe</a>
+        <a class="button" href="https://github.com/asppel/easytools">Открыть репозиторий</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <p class="label">Поставка</p>
+        <p class="value"><span class="pill">Binary-only</span></p>
+        <p class="value" style="margin-top: 12px;">Исходный код в публичный репозиторий не входит.</p>
+      </article>
+
+      <article class="card">
+        <p class="label">Файл</p>
+        <p class="value"><code>downloads/EasyTools.Setup.exe</code></p>
+        <p class="value" style="margin-top: 12px;">Размер: 71.9 MB</p>
+      </article>
+
+      <article class="card">
+        <p class="label">Контрольная сумма</p>
+        <p class="value"><code>EFCC4F83E18834A2DC49FB30156B7D708DCA87D824F27DE579ABE2BB07D1B515</code></p>
+      </article>
+    </section>
+
+    <section class="card">
+      <p class="label">Установка</p>
+      <ol>
+        <li>Скачайте <code>EasyTools.Setup.exe</code>.</li>
+        <li>Запустите установщик.</li>
+        <li>Нажмите кнопку установки в окне EasyTools Setup.</li>
+        <li>Пакет будет развернут в <code>%APPDATA%\Autodesk\ApplicationPlugins\EasyTools.bundle</code>.</li>
+      </ol>
+    </section>
+
+    <p class="footer">EasyTools public distribution for AutoCAD 2025.</p>
+  </main>
+</body>
+</html>
