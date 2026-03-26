@@ -1,49 +1,23 @@
 <p align="center"><strong>EasyTools</strong><br>AutoCAD</p>
 
 <p align="center">
-  <a href="./release/1.0.0/EasyTools.Setup.exe"><strong>Скачать EasyTools</strong></a> ·
-  <a href="./release/1.0.0/RELEASE.md">Описание</a> ·
-  <a href="https://github.com/asppel/easytools">Github</a>
+  <a href="https://asppel.github.io/easytools/"><strong>О проекте</strong></a> ·
+  <a href="https://asppel.github.io/easytools/release/1.0.0/">Версия 1.0.0</a> ·
+  <a href="./release/1.0.0/EasyTools.Setup.exe">Скачать EasyTools</a>
 </p>
 
 # EasyTools
 
-EasyTools — рабочая среда для AutoCAD, в которой задачи набора, объекта и выпускных данных собираются в единый интерфейс. Продукт ориентирован на понятный пользовательский сценарий: открыть среду, выбрать рабочий набор, работать с параметрами объектов и получать итоговые данные в одном процессе.
+EasyTools — платформа инструментов для AutoCAD.
 
-## Версия 1.0.0
+Основное описание проекта и пользовательская документация размещены на GitHub Pages:
 
-- Первая оформленная пользовательская поставка EasyTools для публичной загрузки.
-- Готовая рабочая сборка для AutoCAD 2025.
-- Установщик, описание релиза и контрольная сумма SHA-256 входят в состав версии.
+- [О проекте EasyTools](https://asppel.github.io/easytools/)
+- [Техническая документация версии 1.0.0](https://asppel.github.io/easytools/release/1.0.0/)
 
-## Назначение
+Состав публичной поставки:
 
-- Сократить объём ручных операций при работе с инженерными данными.
-- Дать единое рабочее пространство для наборов, карточек объектов и выпускных результатов.
-- Сделать запуск и установку EasyTools простыми и предсказуемыми для конечного пользователя.
+- [EasyTools.Setup.exe](./release/1.0.0/EasyTools.Setup.exe)
+- [EasyTools.Setup.exe.sha256](./release/1.0.0/EasyTools.Setup.exe.sha256)
 
-## Возможности
-
-- Единый интерфейс работы внутри AutoCAD.
-- Поддержка сценариев работы с наборами и объектами.
-- Работа с карточками данных и структурированными параметрами.
-- Подготовка итоговых данных по рабочему процессу пользователя.
-
-## Загрузка
-
-- Установщик: [`release/1.0.0/EasyTools.Setup.exe`](./release/1.0.0/EasyTools.Setup.exe)
-- Описание версии: [`release/1.0.0/RELEASE.md`](./release/1.0.0/RELEASE.md)
-- Контрольная сумма: [`release/1.0.0/EasyTools.Setup.exe.sha256`](./release/1.0.0/EasyTools.Setup.exe.sha256)
-
-## Установка
-
-1. Откройте каталог [`release/1.0.0`](./release/1.0.0).
-2. Скачайте EasyTools.
-3. При необходимости сверьте SHA-256.
-4. Запустите установщик.
-5. Подтвердите установку в окне EasyTools.
-
-## Страница проекта
-
-- GitHub Pages: `https://asppel.github.io/easytools/`
-- GitHub: `https://github.com/asppel/easytools`
+Этот репозиторий используется как публичная точка распространения поставки EasyTools.
