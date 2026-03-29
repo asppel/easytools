@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EasyTools</title>
-  <meta name="description" content="EasyTools — платформа инструментов для AutoCAD.">
+  <meta name="description" content="Публичная binary-only поставка платформы EasyTools для AutoCAD">
   <style>
     :root {
       --bg: #f7fbfa;
@@ -17,9 +17,7 @@
       --accent-soft: #e8f8f4;
       --shadow: 0 24px 60px rgba(15, 118, 110, 0.10);
     }
-
     * { box-sizing: border-box; }
-
     body {
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
@@ -28,15 +26,12 @@
         radial-gradient(circle at top center, rgba(15, 118, 110, 0.10), transparent 26%),
         linear-gradient(180deg, #fbfefd 0%, var(--bg) 100%);
     }
-
     a { color: inherit; }
-
     .page {
       max-width: 1120px;
       margin: 0 auto;
       padding: 32px 24px 64px;
     }
-
     .hero {
       padding: 42px 28px 30px;
       border-radius: 32px;
@@ -45,7 +40,6 @@
       box-shadow: var(--shadow);
       text-align: center;
     }
-
     .hero-mark {
       width: 12px;
       height: 12px;
@@ -54,7 +48,6 @@
       background: var(--accent);
       box-shadow: 0 0 0 10px rgba(15, 118, 110, 0.10);
     }
-
     .hero h1 {
       margin: 0;
       font-size: clamp(42px, 7vw, 82px);
@@ -62,7 +55,6 @@
       letter-spacing: -0.04em;
       color: var(--accent);
     }
-
     .hero p {
       margin: 12px 0 0;
       font-size: 18px;
@@ -71,7 +63,6 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
-
     .actions {
       display: flex;
       flex-wrap: wrap;
@@ -79,7 +70,6 @@
       justify-content: center;
       margin-top: 28px;
     }
-
     .button {
       display: inline-flex;
       align-items: center;
@@ -95,13 +85,11 @@
       font-weight: 700;
       transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
     }
-
     .button:hover {
       transform: translateY(-1px);
       box-shadow: 0 16px 30px rgba(15, 118, 110, 0.08);
       border-color: #8ecfbe;
     }
-
     .button.primary {
       min-width: 280px;
       min-height: 56px;
@@ -110,19 +98,16 @@
       color: #ffffff;
       font-size: 16px;
     }
-
     .button svg {
       width: 18px;
       height: 18px;
       flex: 0 0 auto;
     }
-
     .content {
       display: grid;
       gap: 18px;
       margin-top: 24px;
     }
-
     .card {
       padding: 24px;
       border-radius: 24px;
@@ -130,7 +115,6 @@
       background: var(--surface);
       box-shadow: 0 16px 36px rgba(15, 118, 110, 0.06);
     }
-
     .card h2 {
       margin: 0 0 12px;
       font-size: 13px;
@@ -139,20 +123,17 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
-
     .card p {
       margin: 0;
       color: var(--text);
       font-size: 16px;
       line-height: 1.75;
     }
-
     .grid {
       display: grid;
       gap: 18px;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
-
     .list {
       margin: 0;
       padding-left: 18px;
@@ -160,7 +141,6 @@
       line-height: 1.9;
       font-size: 15px;
     }
-
     .meta {
       display: inline-flex;
       align-items: center;
@@ -176,31 +156,25 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
-
     .footer {
       text-align: center;
       margin-top: 8px;
       color: var(--muted);
       font-size: 13px;
     }
-
     @media (max-width: 720px) {
       .page {
         padding: 20px 16px 44px;
       }
-
       .hero {
         padding: 32px 20px 24px;
       }
-
       .button.primary {
         min-width: 100%;
       }
-
       .actions {
         align-items: stretch;
       }
-
       .actions .button:not(.primary) {
         flex: 1 1 calc(50% - 7px);
       }
@@ -215,47 +189,50 @@
       <p>AutoCAD</p>
 
       <div class="actions">
-        <a class="button primary" href="https://github.com/asppel/easytools/releases/download/v1.0.0/EasyTools.Setup.1.0.0.exe">Скачать</a>
-        <a class="button" href="https://github.com/asppel/easytools" aria-label="Github">
+        <a class="button primary" href="https://github.com/asppel/easytools/releases/download/v1.0.1/EasyTools.Setup.1.0.1.exe">Скачать</a>
+        <a class="button" href="https://github.com/asppel/easytools/releases/download/v1.0.1/EasyTools.Setup.1.0.1.exe.sha256">SHA-256</a>
+        <a class="button" href="./CHANGELOG.md">Changelog</a>
+        <a class="button" href="https://github.com/asppel/easytools" aria-label="GitHub">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M12 2C6.48 2 2 6.58 2 12.23C2 16.75 4.87 20.58 8.84 21.93C9.34 22.03 9.52 21.71 9.52 21.43V19.78C6.73 20.4 6.14 18.57 6.14 18.57C5.68 17.36 5.03 17.04 5.03 17.04C4.12 16.4 5.1 16.41 5.1 16.41C6.1 16.48 6.63 17.46 6.63 17.46C7.52 19.03 8.97 18.58 9.54 18.31C9.63 17.65 9.89 17.2 10.17 16.94C7.94 16.68 5.6 15.79 5.6 11.82C5.6 10.69 5.99 9.77 6.64 9.04C6.54 8.78 6.19 7.74 6.73 6.33C6.73 6.33 7.57 6.06 9.49 7.4C10.29 7.17 11.15 7.05 12 7.05C12.85 7.05 13.71 7.17 14.51 7.4C16.43 6.06 17.27 6.33 17.27 6.33C17.81 7.74 17.46 8.78 17.36 9.04C18.01 9.77 18.4 10.69 18.4 11.82C18.4 15.8 16.05 16.68 13.81 16.93C14.17 17.25 14.48 17.87 14.48 18.82V21.43C14.48 21.71 14.66 22.04 15.16 21.93C19.13 20.58 22 16.75 22 12.23C22 6.58 17.52 2 12 2Z" fill="currentColor"/>
           </svg>
-          <span>Github</span>
+          <span>GitHub</span>
         </a>
       </div>
     </header>
 
     <main class="content">
       <section class="card">
-        <h2>О проекте</h2>
+        <h2>Последний публичный релиз</h2>
         <p>
-          Платформа инструментов для AutoCAD. Она объединяет рабочие наборы, объекты
-          и выпускные данные в одной пользовательской среде.
+          Доступна binary-only поставка платформы EasyTools для AutoCAD. Публичный installer содержит только платформу,
+          без прикладных наборов и без каталога <code>Contents\Sets</code>.
         </p>
-        <div class="meta">Версия 1.0.0 · AutoCAD 2025</div>
+        <div class="meta">Версия 1.0.1 · AutoCAD 2025</div>
       </section>
 
       <section class="grid">
         <article class="card">
-          <h2>Назначение</h2>
-          <p>
-            Цель EasyTools — внедрение эффективных решений для расчёта, проектирования,
-            подготовки планов и выпуска инженерных данных в среде AutoCAD.
-          </p>
+          <h2>Что входит</h2>
+          <ul class="list">
+            <li>Платформа EasyTools для AutoCAD</li>
+            <li>Installer и контрольная сумма SHA-256</li>
+            <li>Минимальная публичная поставка без исходного кода</li>
+          </ul>
         </article>
 
         <article class="card">
-          <h2>Возможности</h2>
+          <h2>Правило наборов</h2>
           <ul class="list">
-            <li>Единый интерфейс работы с наборами и объектами в AutoCAD.</li>
-            <li>Карточки данных с управляемыми параметрами инженерных элементов.</li>
-            <li>Подготовка структурированных выпускных данных по рабочему процессу набора.</li>
-            <li>Готовая публичная поставка с установкой без ручной сборки продукта.</li>
+            <li>Прикладные наборы публикуются отдельно от платформы</li>
+            <li>Версия платформы ведётся по EasyTools</li>
+            <li>Версии наборов ведутся независимо</li>
+            <li>Наборы не входят в публичный installer платформы</li>
           </ul>
         </article>
       </section>
 
-      <p class="footer">EasyTools 1.0.0</p>
+      <p class="footer">EasyTools 1.0.1</p>
     </main>
   </div>
 </body>
