@@ -27,4 +27,4 @@ EasyTools — дополнение для AutoCAD с отдельным инте
 
 ## Ссылки
 
-- [Скачать актуальную версию](https://github.com/asppel/easytools/releases/latest/download/EasyTools.Setup.exe)
+- [Скачать актуальную версию](https://github.com/asppel/easytools/releases/latest)
