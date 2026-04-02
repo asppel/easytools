@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EasyTools</title>
-  <meta name="description" content="EasyTools — модульная платформа для инженерной работы в AutoCAD с аккуратным интерфейсом, расширяемой архитектурой и профессиональным релизным контуром.">
+  <meta name="description" content="EasyTools — дополнение для AutoCAD с отдельным интерфейсом и индивидуальными пользовательскими наборами инструментов для ускорения разработки проектной документации.">
   <style>
     :root {
       --bg: #f4f8f7;
-      --surface: rgba(255, 255, 255, 0.9);
+      --surface: rgba(255, 255, 255, 0.92);
       --surface-strong: #ffffff;
       --border: rgba(15, 118, 110, 0.14);
-      --border-strong: rgba(15, 118, 110, 0.28);
+      --border-strong: rgba(15, 118, 110, 0.22);
       --text: #102127;
       --muted: #4b6469;
       --accent: #0f766e;
       --accent-strong: #0b5f59;
       --accent-soft: #e4f5f1;
-      --shadow: 0 28px 60px rgba(12, 53, 52, 0.10);
+      --shadow: 0 28px 60px rgba(12, 53, 52, 0.1);
       --hero-shadow: 0 36px 90px rgba(12, 53, 52, 0.14);
     }
 
@@ -36,7 +36,7 @@
     a { color: inherit; }
 
     .page {
-      width: min(1180px, calc(100% - 32px));
+      width: min(1120px, calc(100% - 32px));
       margin: 0 auto;
       padding: 28px 0 56px;
     }
@@ -47,7 +47,7 @@
       padding: 46px 40px 40px;
       border-radius: 34px;
       border: 1px solid var(--border);
-      background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(244,251,249,0.98) 58%, rgba(230,247,242,0.96) 100%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(244, 251, 249, 0.98) 58%, rgba(230, 247, 242, 0.96) 100%);
       box-shadow: var(--hero-shadow);
     }
 
@@ -76,7 +76,7 @@
     .hero-inner {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.9fr);
+      grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.85fr);
       gap: 28px;
       align-items: end;
     }
@@ -89,7 +89,7 @@
       padding: 10px 14px;
       border-radius: 999px;
       border: 1px solid rgba(15, 118, 110, 0.16);
-      background: rgba(255,255,255,0.78);
+      background: rgba(255, 255, 255, 0.78);
       color: var(--accent);
       font-size: 12px;
       font-weight: 700;
@@ -115,16 +115,16 @@
     }
 
     .lead {
-      width: min(680px, 100%);
+      width: min(700px, 100%);
       margin: 20px 0 0;
       color: var(--text);
       font-size: clamp(18px, 2.2vw, 22px);
-      line-height: 1.68;
+      line-height: 1.64;
     }
 
     .hero-copy p {
-      margin: 12px 0 0;
-      max-width: 700px;
+      margin: 14px 0 0;
+      max-width: 680px;
       color: var(--muted);
       font-size: 15px;
       line-height: 1.78;
@@ -162,7 +162,7 @@
     }
 
     .button.primary {
-      min-width: 224px;
+      min-width: 220px;
       background: linear-gradient(180deg, var(--accent) 0%, var(--accent-strong) 100%);
       border-color: var(--accent);
       color: #fff;
@@ -228,24 +228,16 @@
       padding: 24px;
     }
 
-    .note {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 14px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      border: 1px solid rgba(15, 118, 110, 0.10);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .card ul {
+      padding-left: 18px;
+    }
+
+    .card li + li {
+      margin-top: 8px;
     }
 
     .footer {
-      margin-top: 6px;
+      margin-top: 4px;
       color: var(--muted);
       font-size: 13px;
       text-align: center;
@@ -263,6 +255,7 @@
       }
 
       .actions { flex-direction: column; }
+
       .button,
       .button.primary {
         width: 100%;
@@ -276,13 +269,13 @@
     <header class="hero">
       <div class="hero-inner">
         <section class="hero-copy">
-          <div class="eyebrow">Платформа для AutoCAD</div>
+          <div class="eyebrow">Дополнение для AutoCAD</div>
           <h1>EasyTools</h1>
           <p class="lead">
-            Единая модульная платформа для инженерной работы в AutoCAD: аккуратный рабочий контур, расширяемая структура наборов и чистый релизный подход без лишнего шума.
+            Дополнение для AutoCAD с отдельным интерфейсом и индивидуальными пользовательскими наборами инструментов, которые заменяют и оптимизируют разработку проектной документации.
           </p>
           <p>
-            Публичная витрина EasyTools показывает платформу как зрелый продукт: с ясной логикой поставки, понятным входом в GitHub и устойчивым сценарием получения актуального релиза.
+            EasyTools помогает сосредоточиться на прикладной работе, ускоряет выполнение узконаправленных задач и делает рабочий контур в AutoCAD более удобным и предсказуемым.
           </p>
 
           <div class="actions">
@@ -298,16 +291,12 @@
 
         <aside class="hero-panel">
           <article class="hero-card">
-            <h2>Платформа</h2>
-            <p>
-              EasyTools проектируется как единый рабочий слой: host, UI, runtime и прикладные наборы развиваются в общей архитектуре, без разрыва между инструментом и инженерной логикой.
-            </p>
+            <h2>Состав</h2>
+            <p>Дополнение для AutoCAD с отдельным пользовательским интерфейсом и рабочим контуром для прикладных инженерных задач.</p>
           </article>
           <article class="hero-card">
-            <h2>Публичная поставка</h2>
-            <p>
-              Публичный релиз сосредоточен на стабильной платформе. Прикладные наборы и специализированные рабочие контуры могут развиваться отдельно, не перегружая основную поставку. Отдельные наборы и специализированные функции предоставляются индивидуально по запросу.
-            </p>
+            <h2>Требования</h2>
+            <p>AutoCAD 2025, Windows 10 или Windows 11, установленный доступ к локальной среде AutoCAD.</p>
           </article>
         </aside>
       </div>
@@ -316,36 +305,30 @@
     <main class="content">
       <section class="grid">
         <article class="card">
-          <h2>Модульная основа</h2>
+          <h2>Назначение</h2>
           <p>
-            Платформа строится вокруг набора как предметной единицы: данные, редакторы, действия и экспорт остаются в границах своей области, сохраняя чистую интеграцию с общим контуром EasyTools.
+            EasyTools объединяет AutoCAD и прикладные пользовательские инструменты в одном отдельном интерфейсе, чтобы заменить ручные рутинные операции и ускорить выпуск проектной документации.
           </p>
         </article>
 
         <article class="card">
-          <h2>Инженерный подход</h2>
-          <p>
-            EasyTools ориентирован на аккуратную рабочую среду AutoCAD: понятный интерфейс, предсказуемый сценарий работы, чистые данные и развитие без хаотичных надстроек.
-          </p>
+          <h2>Достоинства</h2>
+          <ul>
+            <li>простой и интуитивный интерфейс;</li>
+            <li>выполнение определённых узконаправленных задач;</li>
+            <li>ускорение пользовательской работы без лишних действий.</li>
+          </ul>
         </article>
 
         <article class="card">
-          <h2>Релизный контур</h2>
+          <h2>Индивидуальные наборы</h2>
           <p>
-            Витрина страницы не привязана к одной конкретной версии. Актуальный релиз, история изменений и состояние проекта ведутся в GitHub, где удобно отслеживать развитие платформы и её публичную поставку.
+            Дополнительные пользовательские наборы инструментов и специализированные функции предоставляются индивидуально по запросу.
           </p>
-          <div class="note">Актуальная версия доступна через Latest Release</div>
         </article>
       </section>
 
-      <section class="card">
-        <h2>Публичный контур проекта</h2>
-        <p>
-          На этой странице EasyTools представлен как зрелая инженерная платформа для AutoCAD: спокойная, современная и расширяемая. Основное описание проекта и его функциональности ведётся в GitHub README, а история релизов и изменений — в GitHub Changelog. Так публичный контур остаётся чистым, а релизная информация всегда остаётся актуальной.
-        </p>
-      </section>
-
-      <p class="footer">EasyTools for AutoCAD</p>
+      <p class="footer">EasyTools для AutoCAD</p>
     </main>
   </div>
 </body>
