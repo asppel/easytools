@@ -1,82 +1,139 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EasyTools</title>
-  <meta name="description" content="EasyTools вЂ” РїСѓР±Р»РёС‡РЅР°СЏ binary-only РїРѕСЃС‚Р°РІРєР° РїР»Р°С‚С„РѕСЂРјС‹ РґР»СЏ AutoCAD.">
+  <meta name="description" content="EasyTools — дополнение для AutoCAD с отдельным интерфейсом и индивидуальными наборами инструментов для ускорения разработки проектной документации.">
   <style>
     :root {
-      --bg: #f7fbfa;
-      --surface: #ffffff;
-      --surface-soft: #f2fbf8;
-      --text: #0f172a;
-      --muted: #476268;
-      --border: #cfe5de;
+      --bg: #f4f8f7;
+      --surface: rgba(255, 255, 255, 0.92);
+      --surface-strong: #ffffff;
+      --border: rgba(15, 118, 110, 0.14);
+      --border-strong: rgba(15, 118, 110, 0.22);
+      --text: #102127;
+      --muted: #4b6469;
       --accent: #0f766e;
-      --accent-soft: #e8f8f4;
-      --shadow: 0 24px 60px rgba(15, 118, 110, 0.10);
+      --accent-strong: #0b5f59;
+      --accent-soft: #e4f5f1;
+      --shadow: 0 28px 60px rgba(12, 53, 52, 0.1);
+      --hero-shadow: 0 36px 90px rgba(12, 53, 52, 0.14);
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
+      font-family: "Segoe UI", "Segoe UI Variable Text", Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top center, rgba(15, 118, 110, 0.10), transparent 26%),
-        linear-gradient(180deg, #fbfefd 0%, var(--bg) 100%);
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.14), transparent 26%),
+        radial-gradient(circle at top right, rgba(15, 118, 110, 0.08), transparent 22%),
+        linear-gradient(180deg, #fbfdfd 0%, var(--bg) 100%);
     }
 
     a { color: inherit; }
 
     .page {
-      max-width: 1120px;
+      width: min(1120px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 32px 24px 64px;
+      padding: 28px 0 56px;
     }
 
     .hero {
-      padding: 42px 28px 30px;
-      border-radius: 32px;
+      position: relative;
+      overflow: hidden;
+      padding: 46px 40px 40px;
+      border-radius: 34px;
       border: 1px solid var(--border);
-      background: linear-gradient(180deg, #ffffff 0%, #f5fcfa 100%);
-      box-shadow: var(--shadow);
-      text-align: center;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(244, 251, 249, 0.98) 58%, rgba(230, 247, 242, 0.96) 100%);
+      box-shadow: var(--hero-shadow);
     }
 
-    .hero-mark {
-      width: 12px;
-      height: 12px;
-      margin: 0 auto 18px;
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      inset: -140px auto auto -90px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(15, 118, 110, 0.10), transparent 70%);
+    }
+
+    .hero::after {
+      inset: auto -80px -120px auto;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(15, 118, 110, 0.09), transparent 72%);
+    }
+
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.85fr);
+      gap: 28px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 118, 110, 0.16);
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 0 10px rgba(15, 118, 110, 0.10);
+      box-shadow: 0 0 0 6px rgba(15, 118, 110, 0.10);
     }
 
-    .hero h1 {
+    h1 {
       margin: 0;
-      font-size: clamp(42px, 7vw, 82px);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
+      font-size: clamp(44px, 7vw, 86px);
+      line-height: 0.94;
+      letter-spacing: -0.05em;
       color: var(--accent);
     }
 
-    .hero p {
-      margin: 12px 0 0;
-      font-size: 18px;
-      font-weight: 600;
+    .lead {
+      width: min(700px, 100%);
+      margin: 20px 0 0;
+      color: var(--text);
+      font-size: clamp(18px, 2.2vw, 22px);
+      line-height: 1.64;
+    }
+
+    .hero-copy p {
+      margin: 14px 0 0;
+      max-width: 680px;
       color: var(--muted);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+      font-size: 15px;
+      line-height: 1.78;
     }
 
     .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      justify-content: center;
       margin-top: 28px;
     }
 
@@ -85,30 +142,31 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-height: 48px;
+      min-height: 54px;
       padding: 0 22px;
-      border-radius: 14px;
+      border-radius: 15px;
       border: 1px solid var(--border);
-      background: var(--surface);
+      background: var(--surface-strong);
       color: var(--text);
       text-decoration: none;
+      font-size: 15px;
       font-weight: 700;
+      letter-spacing: 0.01em;
       transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
     }
 
     .button:hover {
       transform: translateY(-1px);
-      box-shadow: 0 16px 30px rgba(15, 118, 110, 0.08);
-      border-color: #8ecfbe;
+      box-shadow: 0 18px 32px rgba(15, 118, 110, 0.10);
+      border-color: var(--border-strong);
     }
 
     .button.primary {
-      min-width: 280px;
-      min-height: 56px;
-      background: var(--accent);
+      min-width: 220px;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--accent-strong) 100%);
       border-color: var(--accent);
-      color: #ffffff;
-      font-size: 16px;
+      color: #fff;
+      box-shadow: 0 18px 32px rgba(15, 118, 110, 0.18);
     }
 
     .button svg {
@@ -117,34 +175,47 @@
       flex: 0 0 auto;
     }
 
-    .content {
+    .hero-panel {
       display: grid;
-      gap: 18px;
-      margin-top: 24px;
+      gap: 14px;
     }
 
+    .hero-card,
     .card {
-      padding: 24px;
-      border-radius: 24px;
+      border-radius: 26px;
       border: 1px solid var(--border);
       background: var(--surface);
-      box-shadow: 0 16px 36px rgba(15, 118, 110, 0.06);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
     }
 
+    .hero-card {
+      padding: 20px 20px 18px;
+    }
+
+    .hero-card h2,
     .card h2 {
       margin: 0 0 12px;
-      font-size: 13px;
-      font-weight: 700;
       color: var(--accent);
-      letter-spacing: 0.08em;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
     }
 
-    .card p {
+    .hero-card p,
+    .card p,
+    .card ul {
       margin: 0;
       color: var(--text);
-      font-size: 16px;
-      line-height: 1.75;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .content {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
     }
 
     .grid {
@@ -153,56 +224,42 @@
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
-    .list {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--text);
-      line-height: 1.9;
-      font-size: 15px;
+    .card {
+      padding: 24px;
     }
 
-    .meta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 14px;
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+    .card ul {
+      padding-left: 18px;
+    }
+
+    .card li + li {
+      margin-top: 8px;
     }
 
     .footer {
-      text-align: center;
-      margin-top: 8px;
+      margin-top: 4px;
       color: var(--muted);
       font-size: 13px;
+      text-align: center;
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 860px) {
+      .hero { padding: 34px 24px 26px; }
+      .hero-inner { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
       .page {
-        padding: 20px 16px 44px;
+        width: min(100% - 20px, 100%);
+        padding: 18px 0 40px;
       }
 
-      .hero {
-        padding: 32px 20px 24px;
-      }
+      .actions { flex-direction: column; }
 
+      .button,
       .button.primary {
-        min-width: 100%;
-      }
-
-      .actions {
-        align-items: stretch;
-      }
-
-      .actions .button:not(.primary) {
-        flex: 1 1 calc(50% - 7px);
+        width: 100%;
+        min-width: 0;
       }
     }
   </style>
@@ -210,56 +267,97 @@
 <body>
   <div class="page">
     <header class="hero">
-      <div class="hero-mark"></div>
-      <h1>EasyTools</h1>
-      <p>AutoCAD</p>
+      <div class="hero-inner">
+        <section class="hero-copy">
+          <div class="eyebrow">Дополнение для AutoCAD</div>
+          <h1>EasyTools</h1>
+          <p class="lead">
+            Дополнение для AutoCAD с отдельным интерфейсом и индивидуальными наборами инструментов, которые оптимизируют разработку проектной документации.
+          </p>
+          <div class="actions">
+            <a class="button primary" id="download-link" href="https://github.com/asppel/easytools/raw/main/Releases/1.0.3/EasyTools.Setup.1.0.3.exe">Скачать</a>
+            <a class="button" href="https://github.com/asppel/easytools" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.58 2 12.23C2 16.75 4.87 20.58 8.84 21.93C9.34 22.03 9.52 21.71 9.52 21.43V19.78C6.73 20.4 6.14 18.57 6.14 18.57C5.68 17.36 5.03 17.04 5.03 17.04C4.12 16.4 5.1 16.41 5.1 16.41C6.1 16.48 6.63 17.46 6.63 17.46C7.52 19.03 8.97 18.58 9.54 18.31C9.63 17.65 9.89 17.2 10.17 16.94C7.94 16.68 5.6 15.79 5.6 11.82C5.6 10.69 5.99 9.77 6.64 9.04C6.54 8.78 6.19 7.74 6.73 6.33C6.73 6.33 7.57 6.06 9.49 7.4C10.29 7.17 11.15 7.05 12 7.05C12.85 7.05 13.71 7.17 14.51 7.4C16.43 6.06 17.27 6.33 17.27 6.33C17.81 7.74 17.46 8.78 17.36 9.04C18.01 9.77 18.4 10.69 18.4 11.82C18.4 15.8 16.05 16.68 13.81 16.93C14.17 17.25 14.48 17.87 14.48 18.82V21.43C14.48 21.71 14.66 22.04 15.16 21.93C19.13 20.58 22 16.75 22 12.23C22 6.58 17.52 2 12 2Z" fill="currentColor"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </section>
 
-      <div class="actions">
-        <a class="button primary" href="https://github.com/asppel/easytools/releases/download/v1.0.4/EasyTools.Setup.1.0.4.exe">РЎРєР°С‡Р°С‚СЊ 1.0.4</a>
-        <a class="button" href="https://github.com/asppel/easytools/releases/download/v1.0.4/EasyTools.Setup.1.0.4.exe.sha256">SHA-256</a>
-        <a class="button" href="./CHANGELOG.md">Changelog</a>
-        <a class="button" href="https://github.com/asppel/easytools" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 2C6.48 2 2 6.58 2 12.23C2 16.75 4.87 20.58 8.84 21.93C9.34 22.03 9.52 21.71 9.52 21.43V19.78C6.73 20.4 6.14 18.57 6.14 18.57C5.68 17.36 5.03 17.04 5.03 17.04C4.12 16.4 5.1 16.41 5.1 16.41C6.1 16.48 6.63 17.46 6.63 17.46C7.52 19.03 8.97 18.58 9.54 18.31C9.63 17.65 9.89 17.2 10.17 16.94C7.94 16.68 5.6 15.79 5.6 11.82C5.6 10.69 5.99 9.77 6.64 9.04C6.54 8.78 6.19 7.74 6.73 6.33C6.73 6.33 7.57 6.06 9.49 7.4C10.29 7.17 11.15 7.05 12 7.05C12.85 7.05 13.71 7.17 14.51 7.4C16.43 6.06 17.27 6.33 17.27 6.33C17.81 7.74 17.46 8.78 17.36 9.04C18.01 9.77 18.4 10.69 18.4 11.82C18.4 15.8 16.05 16.68 13.81 16.93C14.17 17.25 14.48 17.87 14.48 18.82V21.43C14.48 21.71 14.66 22.04 15.16 21.93C19.13 20.58 22 16.75 22 12.23C22 6.58 17.52 2 12 2Z" fill="currentColor"/>
-          </svg>
-          <span>GitHub</span>
-        </a>
+        <aside class="hero-panel">
+          <article class="hero-card">
+            <h2>Состав</h2>
+            <p>Дополнение для AutoCAD с отдельным интерфейсом для установки и последующего использования индивидуальных пользовательских наборов.</p>
+          </article>
+          <article class="hero-card">
+            <h2>Требования</h2>
+            <p>Autodesk AutoCAD.</p>
+          </article>
+        </aside>
       </div>
     </header>
 
     <main class="content">
-      <section class="card">
-        <h2>РџРѕСЃР»РµРґРЅРёР№ РїСѓР±Р»РёС‡РЅС‹Р№ СЂРµР»РёР·</h2>
-        <p>
-          Р”РѕСЃС‚СѓРїРЅР° binary-only РїРѕСЃС‚Р°РІРєР° РїР»Р°С‚С„РѕСЂРјС‹ EasyTools РґР»СЏ AutoCAD. РџСѓР±Р»РёС‡РЅС‹Р№ installer СЃРѕРґРµСЂР¶РёС‚ С‚РѕР»СЊРєРѕ РїР»Р°С‚С„РѕСЂРјСѓ,
-          Р±РµР· РїСЂРёРєР»Р°РґРЅС‹С… РЅР°Р±РѕСЂРѕРІ Рё Р±РµР· РєР°С‚Р°Р»РѕРіР° <code>Contents\Sets</code>.
-        </p>
-        <div class="meta">Р’РµСЂСЃРёСЏ 1.0.4 В· AutoCAD 2025</div>
-      </section>
-
       <section class="grid">
         <article class="card">
-          <h2>Р§С‚Рѕ РІС…РѕРґРёС‚</h2>
-          <ul class="list">
-            <li>РџР»Р°С‚С„РѕСЂРјР° EasyTools РґР»СЏ AutoCAD.</li>
-            <li>Installer Рё РєРѕРЅС‚СЂРѕР»СЊРЅР°СЏ СЃСѓРјРјР° SHA-256.</li>
-            <li>РњРёРЅРёРјР°Р»СЊРЅР°СЏ РїСѓР±Р»РёС‡РЅР°СЏ РїРѕСЃС‚Р°РІРєР° Р±РµР· РёСЃС…РѕРґРЅРѕРіРѕ РєРѕРґР°.</li>
+          <h2>Назначение</h2>
+          <p>
+            Заменить ручные рутинные пользовательские операции в проектировании и ускорить выпуск проектной документации.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Достоинства</h2>
+          <ul>
+            <li>простой и интуитивный интерфейс;</li>
+            <li>выполнение определённых узконаправленных задач;</li>
+            <li>ускорение пользовательской работы в проектировании.</li>
           </ul>
         </article>
 
         <article class="card">
-          <h2>РџСЂР°РІРёР»Рѕ РЅР°Р±РѕСЂРѕРІ</h2>
-          <ul class="list">
-            <li>РџСЂРёРєР»Р°РґРЅС‹Рµ РЅР°Р±РѕСЂС‹ РїСѓР±Р»РёРєСѓСЋС‚СЃСЏ РѕС‚РґРµР»СЊРЅРѕ РѕС‚ РїР»Р°С‚С„РѕСЂРјС‹.</li>
-            <li>Р’РµСЂСЃРёСЏ РїР»Р°С‚С„РѕСЂРјС‹ РІРµРґС‘С‚СЃСЏ РїРѕ EasyTools.</li>
-            <li>Р’РµСЂСЃРёСЏ РєР°Р¶РґРѕРіРѕ РЅР°Р±РѕСЂР° РІРµРґС‘С‚СЃСЏ РЅРµР·Р°РІРёСЃРёРјРѕ.</li>
-            <li>LightingRoad Рё Р±СѓРґСѓС‰РёРµ РЅР°Р±РѕСЂС‹ РЅРµ РІС…РѕРґСЏС‚ РІ РїСѓР±Р»РёС‡РЅС‹Р№ installer РїР»Р°С‚С„РѕСЂРјС‹.</li>
-          </ul>
+          <h2>Индивидуальные наборы</h2>
+          <p>
+            Дополнительные пользовательские наборы инструментов и специализированные функции предоставляются индивидуально по запросу.
+          </p>
         </article>
       </section>
 
-      <p class="footer">EasyTools 1.0.4</p>
+      <p class="footer">EasyTools для AutoCAD</p>
     </main>
   </div>
+  <script>
+    (function () {
+      const downloadLink = document.getElementById("download-link");
+      if (!downloadLink) {
+        return;
+      }
+
+      const latestReleaseUrl = "https://github.com/asppel/easytools/releases/latest";
+      const assetPattern = /^EasyTools\.Setup\.\d+\.\d+\.\d+\.exe$/i;
+
+      fetch("https://api.github.com/repos/asppel/easytools/releases/latest", {
+        headers: { Accept: "application/vnd.github+json" }
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("latest release not available");
+          }
+          return response.json();
+        })
+        .then((release) => {
+          const asset = (release.assets || []).find((item) => assetPattern.test(item.name));
+          if (asset && asset.browser_download_url) {
+            downloadLink.href = asset.browser_download_url;
+          } else {
+            downloadLink.href = latestReleaseUrl;
+          }
+        })
+        .catch(() => {
+          downloadLink.href = latestReleaseUrl;
+        });
+    })();
+  </script>
 </body>
 </html>

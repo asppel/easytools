@@ -1,28 +1,29 @@
 # EasyTools
 
-Публичная binary-only поставка платформы EasyTools для AutoCAD.
+EasyTools — дополнение для AutoCAD с отдельным интерфейсом и индивидуальными наборами инструментов, которые оптимизируют разработку проектной документации.
 
-## Latest Public Release
+## Назначение
 
-- Version: 1.0.4
-- Installer: [EasyTools.Setup.1.0.4.exe](https://github.com/asppel/easytools/releases/download/v1.0.4/EasyTools.Setup.1.0.4.exe)
-- SHA-256: [EasyTools.Setup.1.0.4.exe.sha256](https://github.com/asppel/easytools/releases/download/v1.0.4/EasyTools.Setup.1.0.4.exe.sha256)
-- Release Folder: [Releases/1.0.4](./Releases/1.0.4)
+Заменить ручные рутинные пользовательские операции в проектировании и ускорить выпуск проектной документации.
 
-## What Is Included
+## Состав
 
-- платформа EasyTools для AutoCAD;
-- installer и контрольная сумма SHA-256;
-- публичная поставка без исходного кода и без каталога Contents\Sets.
+Add-ins дополнение для AutoCAD - отдельный интерфейс для использования индивидуальных пользовательских наборов различных функциональных инструментов.
 
-## Set Policy
+## Требования
 
-- прикладные наборы публикуются отдельно от платформы;
-- версия платформы ведётся по EasyTools;
-- версия каждого набора ведётся независимо;
-- LightingRoad и будущие наборы не входят в публичный installer платформы.
+- Autodesk AutoCAD.
 
-## Links
+## Достоинства
 
-- Project Page: [GitHub Pages](https://asppel.github.io/easytools/)
-- Version History: [CHANGELOG.md](./CHANGELOG.md)
+- простой и интуитивный интерфейс;
+- выполнение определённых узконаправленных задач;
+- ускорение пользовательской работы в проектировании.
+
+## Индивидуальные наборы
+
+Пользовательские наборы инструментов и специализированные функции предоставляются индивидуально по запросу.
+
+## Ссылки
+
+- [Скачать актуальную версию](https://github.com/asppel/easytools/releases/latest)
