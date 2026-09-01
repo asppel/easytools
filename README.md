@@ -2,8 +2,6 @@
 
 EasyTools — дополнение для AutoCAD с отдельным интерфейсом и индивидуальными наборами инструментов, которые оптимизируют разработку проектной документации.
 
-**Version: 1.1.1** · [Скачать установщик](https://github.com/asppel/easytools/releases/download/v1.1.1/EasyTools.Setup.1.1.1.exe) · [SHA-256](https://github.com/asppel/easytools/releases/download/v1.1.1/EasyTools.Setup.1.1.1.exe.sha256) · [Журнал изменений](./CHANGELOG.md)
-
 ## Назначение
 
 Заменить ручные рутинные пользовательские операции в проектировании и ускорить выпуск проектной документации.
